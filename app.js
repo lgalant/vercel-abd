@@ -18,6 +18,11 @@ app.get('/about', (req, res) => {
   res.send('About route 🎉 ')
 })
 
+
+app.get('/host', (req, res) => {
+    res.send('pghost:' + process.env.PGHOST )
+  })
+
 app.get('/canciones', async (req, res) => {
   const client = new Client(config);
   await client.connect();
